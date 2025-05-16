@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pyo
+*.pyd
+*.pkl
+
+# Environment
+.env
+.venv/
+env/
+venv/
+*.env
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model weights and large files
+models/*.h5
+models/*.pt
