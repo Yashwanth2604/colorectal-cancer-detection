@@ -1,0 +1,14 @@
+create database cancer;
+use cancer;
+
+create table signup(username varchar(50), password varchar(50),
+contact_no varchar(12),
+email_id varchar(50),
+address varchar(50));
+
+create table appointment(appointment_id int,
+username varchar(50),
+detected_cancer varchar(50),
+doctor_name varchar(50),
+appointment_date varchar(30)); 
+
