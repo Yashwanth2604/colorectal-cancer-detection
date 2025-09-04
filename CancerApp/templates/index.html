@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+<head>
+<title>Colorectal Cancer Detection</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<style>
+body {
+  background-color: #f0f8ff; 
+  background-image: url("{% static 'images/do2.jpg' %}");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: black; 
+}
+</style>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1 align="center"><span>Colorectal Cancer Detection using Pre-Trained Ensemble Algorithms</span><small></small></h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content_bg">
+        <div class="menu_nav">
+         
+           <ul><center>
+	  <li><a href="{% url 'index' %}"><font size="3" color="black">Home</font></a></li>
+      <li><a href="{% url 'UserLogin' %}"><font size="3" color="black">User Login</font></a></li>
+	  <li><a href="{% url 'Signup' %}"><font size="3" color="black">New User Signup</font></a></li>
+	  <li><a href="{% url 'Aboutus' %}"><font size="3" color="black">About Us</font></a></li>
+	 		
+		</center></ul>
+         
+        </div>
+        <div class="hbg"><img src="{% static 'images/colorectalcancersharing.jpg' %}" width="915" height="286" alt="" /></div>
+
+		       <p align="justify"><font size="3" style="font-family: Comic Sans MS" color="black">Colorectal Cancer Detection using Pre-Trained Ensemble Algorithms
+</p>
+ 
+ <font size="3" color="black"><center>{{ data|safe }}</center></font><br/>
+		<img src="data:image/png;base64, {{ img }}" alt="" />
+  </body>
+</html>

@@ -1,0 +1,73 @@
+{% load static %}
+<html>
+<head>
+<title>Colorectal Cancer Detection</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter Username");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Please Enter Password");
+	formObj.t2.focus();
+	return false;
+	}
+	formObj.actionUpdateData.value="update";
+	return true;
+	}
+	</script>
+	
+</head>
+<style>
+body {
+  background-image: url("{% static 'images/do2.jpg' %}");
+}
+</style>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><span>Colorectal Cancer Detection using Pre-Trained Ensemble Algorithms</span><small></small></h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content_bg">
+        <div class="menu_nav">
+         <ul><center>
+		<li><a href="{% url 'LoadDataset' %}"><font size="3" color="black">Load & Process Dataset</font></a></li>
+		<li><a href="{% url 'RunInception' %}"><font size="3" color="black">Run InceptionV3</font></a></li>
+		<li><a href="{% url 'RunResnet' %}"><font size="3" color="black">ResNet50</font></a></li>
+		<li><a href="{% url 'RunEfficientNet' %}"><font size="3" color="black">EfficientNet</font></a></li>
+	  <li><a href="{% url 'DetectCancer' %}"><font size="3" color="black">Chatbot Cancer Detection</font></a></li>
+	  <li><a href="{% url 'index' %}"><font size="3" color="black">Logout</font></a></li>		
+		</center></ul>
+        </div>
+        <div class="hbg"><img src="{% static 'images/do3.jpg' %}" width="915" height="286" alt="" /></div>
+      				<center>
+<form name="f1" method="post" action={% url 'DetectCancerAction' %} enctype="multipart/form-data" onsubmit="return validate(this);">
+{% csrf_token %}<br/>
+   <h2><b>Upload Colorectal Image Screen</b></h2>
+   
+	<font size="" color="red"><center>{{ data }}</center></font>
+						
+						<table align="center" width="30%" >
+			 
+ <tr><td><font size="" color="black">Upload&nbsp;Image</b></td><td><input type="file" name="t1" style="font-family: Comic Sans MS" size="30"/></td></tr>
+
+			<tr><td></td><td><input type="submit" value="Submit"></td></tr>
+			</table><br/><br/><br/><br/><br/>
+				</div>	
+					
+				</div>
+				
+					
+	</body>
+</html>
